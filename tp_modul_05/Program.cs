@@ -17,6 +17,15 @@ namespace tp_modul_05
         }
     }
 
+    public class HalloGeneric
+    {
+
+        public void sapaUser<T>(T entity)
+        {
+            Console.WriteLine($"Halo Nama Saya {entity}");
+        }
+    }
+
     class Program
     {
         public static void Main(string[] args)
@@ -24,6 +33,16 @@ namespace tp_modul_05
             GenericData<long> data = new GenericData<long>(103022300110);
 
             data.printData(103022300110);
+
+            string nama;
+
+            HalloGeneric user = new HalloGeneric();
+
+            Console.Write("Masukan Nama kamu : ");
+            nama = Console.ReadLine();
+
+            user.sapaUser(nama);
+
         }
     }
 
