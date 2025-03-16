@@ -2,12 +2,18 @@
 
 namespace tp_modul_05
 {
-    public class HalloGeneric
+    public class GenericData<T>
     {
+        private readonly T data;
 
-        public void sapaUser<T>(T entity)
+        public GenericData(T data)
         {
-            Console.WriteLine($"Halo Nama Saya {entity}");
+            this.data = data;
+        }
+
+        public void printData(T data)
+        {
+            Console.WriteLine($"Data yang tersimpan adalah data {data}");
         }
     }
 
@@ -15,15 +21,10 @@ namespace tp_modul_05
     {
         public static void Main(string[] args)
         {
-            string nama;
+            GenericData<long> data = new GenericData<long>(103022300110);
 
-            HalloGeneric user = new HalloGeneric();
-
-            Console.Write("Masukan Nama kamu : ");
-            nama = Console.ReadLine();
-
-            user.sapaUser(nama);
-
+            data.printData(103022300110);
         }
     }
+
 }
